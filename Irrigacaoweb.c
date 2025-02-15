@@ -9,21 +9,7 @@
 #include "buzzer/buzzer.h"
 #include "hardware/pwm.h"
 #include "thingspeak/send_data.h"
-
-#define LED_R 13                // Led Bomba desligada
-#define LED_G 11                // Led Bomba ligada
-#define BUZZER_PIN 21           // Pino do buzzer
-#define REQUEST_INTERVAL_MS 500 // Intervalo de 500ms entre requisições
-
-char *bombaLigada[] = {
-    "              ",
-    " BOMBA LIGADA ",
-    "              "};
-
-char *bombaDesligada[] = {
-    "                ",
-    "BOMBA DESLIGADA ",
-    "                "};
+#include "Irrigacaoweb.h"
 
 // Funções para simular temperatura e umidade
 float simular_temperatura()
