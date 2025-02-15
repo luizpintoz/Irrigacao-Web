@@ -1,10 +1,15 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS  # Adicionando CORS
 
 app = Flask(__name__)
 CORS(app)  # Habilita CORS para todas as rotas
 
 estado = {"estado": -1, "modo": "automatico"}  # Estado inicial
+
+
+@app.route("/", methods=["GET"])
+def sistema_irrigacao_web():
+    return render_template("sistema_irrigacao.html")
 
 
 @app.route("/toggle_bomba", methods=["GET", "POST"])
