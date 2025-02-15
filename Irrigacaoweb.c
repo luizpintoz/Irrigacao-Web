@@ -75,7 +75,6 @@ int main()
             proxima_simulador = 0;
             temperatura = simular_temperatura();
             umidade = simular_umidade();
-            printf("Temperatura: %.1f°C, Umidade: %.1f%%\n", temperatura, umidade);
         }
 
         // Faz uma requisição à API
