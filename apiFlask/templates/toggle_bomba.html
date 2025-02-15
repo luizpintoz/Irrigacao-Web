@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toogle Bomba</title>
+    <link rel="stylesheet" href="..\static\css\style.css">
     <script>
         function toggleBomba(estado) {
             if (estado === -1) {
@@ -22,9 +23,19 @@
     </script>
 </head>
 <body>
-    <h1>Sistema de Irrigação</h1>
-    <button onclick="toggleBomba(1)">Ligar Irrigação</button>
-    <button onclick="toggleBomba(0)">Desligar Irrigação</button>
-    <button onclick="toggleBomba(-1)">Modo Automático</button>
+    <header>
+        <h1>Sistema de Irrigação</h1>
+    </header>
+    <section class="buttons">
+        <div class="button-irrig ligado">
+            <button onclick="toggleBomba(1)">Ligar Irrigação</button>
+        </div>
+        <div class="button-irrig desligado">
+            <button onclick="toggleBomba(0)">Desligar Irrigação</button>
+        </div>
+        <div class="button-irrig automatico">
+            <button onclick="toggleBomba(-1)">Modo Automático</button>
+        </div>
+    </section>
 </body>
 </html>

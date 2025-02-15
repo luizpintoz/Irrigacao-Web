@@ -1,0 +1,49 @@
+/* static/css/style.css */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-irrig button {
+  padding: 10px 20px;
+  margin: 5px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ligado button {
+  background-color: #00ff00;
+}
+
+.ligado button:hover {
+  background-color: #31c231;
+}
+
+.desligado button {
+  background-color: #ff0000;
+}
+
+.desligado button:hover {
+  background-color: #c93131;
+}
+
+.automatico button {
+  background-color: blue;
+}
+
+.automatico button:hover {
+  background-color: rgb(40, 40, 161);
+}
