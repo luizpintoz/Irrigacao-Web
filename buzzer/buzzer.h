@@ -6,8 +6,7 @@
 // Configuração da frequência do buzzer (em Hz)
 #define BUZZER_FREQUENCY 500
 
-void main_buzzer();
-void pwm_init_buzzer(uint pin);
-void beep(uint pin, uint duration_ms);
+extern void pwm_init_buzzer(uint pin);
+extern void beep(uint pin, uint duration_ms);
 
 #endif

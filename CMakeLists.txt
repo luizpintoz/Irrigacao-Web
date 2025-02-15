@@ -35,7 +35,13 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(Irrigacaoweb Irrigacaoweb.c request/request.c display/ssd1306_i2c.c display/display.c buzzer/buzzer.c)
+add_executable(Irrigacaoweb Irrigacaoweb.c 
+    request/request.c 
+    display/ssd1306_i2c.c 
+    display/display.c 
+    buzzer/buzzer.c
+    thingspeak/send_data.c
+)
 
 pico_set_program_name(Irrigacaoweb "Irrigacaoweb")
 pico_set_program_version(Irrigacaoweb "0.1")

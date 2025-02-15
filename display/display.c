@@ -29,7 +29,7 @@ void showMessage(char **msg, int msg_count, uint8_t *ssd, struct render_area *fr
     // Exibe a temperatura e umidade em duas linhas separadas
     char temp_line[32];
     char umid_line[32];
-    snprintf(temp_line, sizeof(temp_line), "Temp: %.1fC", temperatura);
+    snprintf(temp_line, sizeof(temp_line), "Temp: %.1f°C", temperatura);
     snprintf(umid_line, sizeof(umid_line), "Umi: %.1f%%", umidade);
 
     // Centraliza as linhas de temperatura e umidade

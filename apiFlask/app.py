@@ -4,7 +4,7 @@ from flask_cors import CORS  # Adicionando CORS
 app = Flask(__name__)
 CORS(app)  # Habilita CORS para todas as rotas
 
-estado = {"estado": 0, "modo": "automatico"}  # Estado inicial
+estado = {"estado": -1, "modo": "automatico"}  # Estado inicial
 
 
 @app.route("/toggle_bomba", methods=["GET", "POST"])

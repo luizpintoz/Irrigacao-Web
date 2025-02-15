@@ -8,6 +8,7 @@
 #include "display/display.h"
 #include "buzzer/buzzer.h"
 #include "hardware/pwm.h"
+#include "thingspeak/send_data.h"
 
 #define LED_R 13                // Led Bomba desligada
 #define LED_G 11                // Led Bomba ligada
@@ -15,12 +16,14 @@
 #define REQUEST_INTERVAL_MS 500 // Intervalo de 500ms entre requisições
 
 char *bombaLigada[] = {
+    "              ",
     " BOMBA LIGADA ",
-};
+    "              "};
 
 char *bombaDesligada[] = {
+    "                ",
     "BOMBA DESLIGADA ",
-};
+    "                "};
 
 // Funções para simular temperatura e umidade
 float simular_temperatura()
@@ -91,11 +94,11 @@ int main()
 
         // Faz uma requisição à API
         make_request();
+        // Enviando os dados pra ThingSpeak
+        send_data_to_thingspeak(temperatura, umidade, estado_bomba);
 
         // Processa a resposta da API
         int estado = extract_number_json(); // Estado manual (1 = ligado, 0 = desligado, -1 = automático)
-        printf("%d", estado);
-        printf("Estado manual recebido: %d\n", estado);
         printf("Temperatura: %.1f°C, Umidade: %.1f%%\n", temperatura, umidade);
 
         // Lógica automática para ligar/desligar a bomba
@@ -125,14 +128,14 @@ int main()
         {
             gpio_put(LED_G, 1);                                                  // Liga o LED verde
             gpio_put(LED_R, 0);                                                  // Desliga o LED vermelho
-            showMessage(bombaLigada, 1, ssd, &frame_area, temperatura, umidade); // Exibe "BOMBA LIGADA"
+            showMessage(bombaLigada, 3, ssd, &frame_area, temperatura, umidade); // Exibe "BOMBA LIGADA"
             beep(BUZZER_PIN, 200);                                               // Emite um beep de 200ms
         }
         else if (estado_bomba == 0)
         {
             gpio_put(LED_R, 1);                                                     // Liga o LED vermelho
             gpio_put(LED_G, 0);                                                     // Desliga o LED verde
-            showMessage(bombaDesligada, 1, ssd, &frame_area, temperatura, umidade); // Exibe "BOMBA DESLIGADA"
+            showMessage(bombaDesligada, 3, ssd, &frame_area, temperatura, umidade); // Exibe "BOMBA DESLIGADA"
             pwm_set_gpio_level(BUZZER_PIN, 0);                                      // Desliga o buzzer
         }
 
