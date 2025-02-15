@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toogle Bomba</title>
+    <script>
+        function toggleBomba(estado) {
+            if (estado === -1) {
+                fetch("http://127.0.0.1:5000/modo_automatico", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({"estado": estado})
+                });
+            } else {fetch("http://127.0.0.1:5000/toggle_bomba", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({"estado": estado})
+            });
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>Sistema de Irrigação</h1>
+    <button onclick="toggleBomba(1)">Ligar Irrigação</button>
+    <button onclick="toggleBomba(0)">Desligar Irrigação</button>
+    <button onclick="toggleBomba(-1)">Modo Automático</button>
+</body>
+</html>
