@@ -1,5 +1,22 @@
 # Irrigação Web
 
-## MODO DE FUNCIONAMENTO
+Olá! Esse projeto foi desenvolvida como projeto final para o curso de sistemas embarcados do Embarcatech 👋✍️
+***O CÓDIGO SÓ IRÁ FUNCIONA EM UMA PLACA BITDOGLAB!!!!!!***
 
-Para que o código funcione terá que alterar as variáveis 'WIFI_SSID' 'WIFI_PASS' 'SERVER_IP (será o IP do seu computador onde irá roda a aplicação Flask)' no arquivo 'request.h' Terá que mudar também 'API_KEY' se quiser manda os dados para outro thingspeak
+### Modo de funcionamento
+Clone o repositório na sua pasta desejada. 
+
+```
+git clone https://github.com/luizpintoz/Irrigacao-Web.git
+```
+
+### Instalando os requerimentos
+Crie um ambiente virtual em python e instale os requerimentos.
+```
+python -m venv venv
+venv/Scripts/activate
+pip install -r requirements.txt
+```
+
+### Mudando variáveis
+Por fim, mude as variáveis do Wifi na pasta "request" e a variável da pasta "thingspeak"
