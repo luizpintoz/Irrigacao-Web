@@ -20,4 +20,8 @@ pip install -r requirements.txt
 ```
 
 ### Mudando variáveis
-Por fim, mude as variáveis do Wifi na pasta "request" e a variável da pasta "thingspeak"
+Mude as variáveis do Wifi na pasta "request" e a variável da pasta "thingspeak"
+Por fim, inicie a aplicação flask e posteriormente compile o código e envie para placa.
+```
+python apiFlask/app.py
+```
