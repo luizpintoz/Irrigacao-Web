@@ -1,8 +1,8 @@
 #ifndef REQUEST_H
 #define REQUEST_H
 
-#define WIFI_SSID "Pedro e Clara"
-#define WIFI_PASS "clara2005"
+#define WIFI_SSID "Wireless"     // Altere para o nome da sua rede
+#define WIFI_PASS ""             // Altere a senha da rede
 #define SERVER_IP "192.168.1.20" // Altere para o IP do seu servidor Flask
 #define SERVER_PORT 5000
 #define RESPONSE_BUFFER_SIZE 1024
